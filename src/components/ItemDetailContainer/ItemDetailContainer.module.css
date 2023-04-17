@@ -1,0 +1,14 @@
+
+    .container {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    background-size: contain;
+    background-color: antiquewhite;
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100%;
+    }
+    
+    
