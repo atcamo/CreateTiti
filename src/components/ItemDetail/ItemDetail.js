@@ -1,8 +1,15 @@
 import styles from './ItemDetail.module.css'
 import ItemCount from '../ItemCount/ItemCount'
+import { useState } from 'react';
 
 
-const ItemDetail = ({id, name, img, category, description, price,stock}) => {
+const ItemDetail = ({id, name, img, category, description, price, stock}) => {
+    const [cartQuantity, setCartQuantity] = useState(0);
+
+    const handleAdd = (quantity) => {
+        setCartQuantity(quantity);
+    }
+
     return (
         <article className={styles.cardItem}>
             <header className={styles.header}>
@@ -25,10 +32,13 @@ const ItemDetail = ({id, name, img, category, description, price,stock}) => {
                 </section>
             </header>
             <footer className={styles.itemFooter}>
-                <ItemCount initial={1} stock={stock} onAdd={(quantity) => ("cantidad agregada", quantity)}/> 
+                <ItemCount initial={1} stock={stock} onAdd={handleAdd}/> 
+                <button disabled={cartQuantity === 0}>
+                    Agregar al carrito
+                </button>
             </footer>
         </article>
     )
-    }
+}
 
 export default ItemDetail

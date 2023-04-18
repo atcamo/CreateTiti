@@ -5,7 +5,7 @@ import style from "./ItemList.module.css"
 const ItemList = ({products}) => {
     return (
         <div className={style.container} >
-        
+            {products.map(prod => <Item key={prod.id} {...prod}/>)}
         </div>
     )
 }

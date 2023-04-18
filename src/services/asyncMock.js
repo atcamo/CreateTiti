@@ -1,8 +1,8 @@
 let product = [
     {
-        id: 1,
+        id: "1",
         name: "Harina de Maiz",
-        img: "images/hmaiz.jpeg",
+        img: "/images/hmaiz.jpeg",
         price: 100,
         description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum deleniti aut dignissimos explicabo ab, cumque eligendi ducimus numquam quibusdam minima.",
@@ -10,7 +10,7 @@ let product = [
         category: "Harina"
     },
     {
-        id: 2,
+        id: "2",
         name: "Harina Almendra",
         img: "/images/halmendra.jpeg",
         price: 150,
@@ -20,7 +20,7 @@ let product = [
         category: "Harina"
     },
     {
-        id: 3,
+        id: "3",
         name: "Brazo de reina",
         img: "/images/brazodereina.jpg",
         price: 200,
@@ -30,7 +30,7 @@ let product = [
         category: "Mezcla"
     },
     {
-        id: 4,
+        id: "4",
         name: "Empanada",
         img: "/images/empanada.jpeg",
         price: 220,
@@ -60,7 +60,9 @@ let product = [
     export const getProductsByCategory = (categoryId) => {
         return new Promise((resolve) => {
             setTimeout(() => {
-                resolve(product.filter(prod => prod.categoria === categoryId))
+                resolve(product.filter(prod => prod.category === categoryId))
             },)
         })
     }
+
+    
