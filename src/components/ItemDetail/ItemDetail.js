@@ -32,10 +32,13 @@ const ItemDetail = ({id, name, img, category, description, price, stock}) => {
                 </section>
             </header>
             <footer className={styles.itemFooter}>
-                <ItemCount initial={1} stock={stock} onAdd={handleAdd}/> 
-                <button disabled={cartQuantity === 0}>
-                    Agregar al carrito
-                </button>
+                {
+                    cartQuantity > 0 ? (
+                        <a href="../CartWidget/CartWitget.js" className={styles.button}>Terminar Compra</a>
+                    ) : ( 
+                        <ItemCount initial={1} stock={stock} onAdd={handleAdd}/> 
+                    )
+                }
             </footer>
         </article>
     )
