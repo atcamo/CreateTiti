@@ -1,14 +1,25 @@
 import styles from './ItemDetail.module.css'
 import ItemCount from '../ItemCount/ItemCount'
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { CartContext } from '../../context/CartContext';
+import { Link } from "react-router-dom";
 
 
 const ItemDetail = ({id, name, img, category, description, price, stock}) => {
     const [cartQuantity, setCartQuantity] = useState(0);
 
+    const { addItem } = useContext(CartContext)
+
     const handleAdd = (quantity) => {
         setCartQuantity(quantity);
+
+        const item ={
+            id, name, price
+        }
+
+        addItem(item, quantity)
     }
+
 
     return (
         <article className={styles.cardItem}>
@@ -34,7 +45,7 @@ const ItemDetail = ({id, name, img, category, description, price, stock}) => {
             <footer className={styles.itemFooter}>
                 {
                     cartQuantity > 0 ? (
-                        <a href="../CartWidget/CartWitget.js" className={styles.button}>Terminar Compra</a>
+                        <Link to="/cart" className={styles.button}>Terminar Compra</Link>
                     ) : ( 
                         <ItemCount initial={1} stock={stock} onAdd={handleAdd}/> 
                     )
