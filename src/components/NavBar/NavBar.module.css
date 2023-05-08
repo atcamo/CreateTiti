@@ -1,4 +1,3 @@
-
 .nameWeb {
   color: #e5c97c;
   margin-left: 20px;
@@ -32,67 +31,73 @@
 }
 
 .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    background-color: #2c1705;
-    color: #fff;    
-    position: relative;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  background-color: rgba(44, 23, 5, 0.6);
+  color: #fff;    
+  position: relative;
+}
 
-  .nav div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    margin-right: 30px;
-  }
-  
-  .nav div a {
-    margin-right: 20px;
-    color: #fff;
-    font-size: 24px;
-    transition: color 0.2s ease, font-size 0.2s ease;
-  }
-  
-  .nav div a:hover {
-    cursor: pointer;
-    color: #e5c97c;
-    font-size: 20px;
-  }
-
-  @media (max-width: 767px) {
-    .nav {
-      flex-direction:column;
-    }
-  }
-
-  @media (min-width: 768px) and (max-width: 991px){
-    .nav {
-      flex-direction:column;
-    }
-
-    .nameWeb {
-      font-size:8vw;
-      transition: font-size 0.8s ease;
-    }
-  }
+.nav div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin-right: 30px;
+}
 
 
-  @media (min-width: 992px) and (max-width: 1199px) {
-    .nameWeb {
-      font-size:12vw;
-      transition: font-size 0.8s ease;
-    }
+.nav div a {
+  margin-right: 20px;
+  color: #e5c97c;
+  font-size: 30px;
+  transition: color 0.2s ease, font-size 0.2s ease;
+  border-radius: 50px;
+  padding: 10px 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  backdrop-filter: blur(5px) opacity(10%);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav div a:hover {
+  cursor: pointer;
+  color: #fff;
+  font-size: 40px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+@media (max-width: 767px) {
+  .nav {
+    flex-direction:column;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+  .nav {
+    flex-direction:column;
   }
 
-  @media (min-width: 1200px) { 
-    .nameWeb {
-      font-size:10vw;
-      transition: font-size 0.8s ease;
-    }
+  .nameWeb {
+    font-size:8vw;
+    transition: font-size 0.8s ease;
   }
-  
-  
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .nameWeb {
+    font-size:12vw;
+    transition: font-size 0.8s ease;
+  }
+}
+
+@media (min-width: 1200px) { 
+  .nameWeb {
+    font-size:10vw;
+    transition: font-size 0.8s ease;
+  }
+}
