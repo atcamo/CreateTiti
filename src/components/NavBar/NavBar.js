@@ -1,5 +1,5 @@
 import React from 'react'
-import CartWidget from '../CartWidget/CartWitget';
+import CartWidget from '../CartWidget/CartWidget';
 import styles from "./NavBar.module.css";
 import { Link, NavLink } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ function NavBar(props) {
             <NavLink to={`/category/Harina`} >Harina</NavLink>
             <NavLink to={`/category/Mezcla`} >Mezcla</NavLink>
           </div>
-          <CartWidget />
+          <CartWidget/>
         </nav>
       </div>
     </>
