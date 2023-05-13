@@ -1,10 +1,8 @@
 import styles from './ItemDetailContainer.module.css'
 import { useState, useEffect } from 'react'
-import { getProductById } from '../../services/asyncMock'
+import { getProduct } from '../../services/firebase/getProduct'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
-
-
 
 const ItemDetailContainer = () => {
     const [product, setProduct]= useState(null)
@@ -12,21 +10,21 @@ const ItemDetailContainer = () => {
     const { itemId } = useParams()
 
     useEffect (() => {
-        getProductById(itemId)
+        getProduct()
             .then(response => {
-                setProduct(response)
+                const foundProduct = response.find(product => product.id === itemId);
+                setProduct(foundProduct);
             })
             .catch(error=> {
                 console.error(error)
             })
     }, [itemId])
 
-
     return (
         <div className={styles.container}>
             <ItemDetail{...product}/>
         </div>
     )
-    }
+}
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

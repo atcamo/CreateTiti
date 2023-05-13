@@ -1,7 +1,7 @@
 import styles from "./ItemListContainer.module.css"
 import ItemList from "../ItemList/ItemList";
 import { useState, useEffect } from "react";
-import { getProducts, getProductsByCategory } from "../../services/asyncMock";
+import { getProduct } from "../../services/firebase/getProduct"
 import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({ greeting }) => {
@@ -12,19 +12,20 @@ const ItemListContainer = ({ greeting }) => {
     console.log(products)
 
     useEffect(() => {
-        const asyncFunc = categoryId ? getProductsByCategory : getProducts
-        
-        asyncFunc(categoryId)
+        getProduct()
             .then(response => {
-                setProducts(response)
+                if (categoryId) {
+                    const filteredProducts = response.filter(product => product.categoryId === categoryId);
+                    setProducts(filteredProducts);
+                } else {
+                    setProducts(response);
+                }
             })
-            
             .catch(error => {
                 console.error(error)
             })
             
-    }, [categoryId]
-    )
+    }, [categoryId])
 
     return (
         <div className={styles.container}>
@@ -33,6 +34,5 @@ const ItemListContainer = ({ greeting }) => {
         </div>
     )
 }
-
 
 export default ItemListContainer;

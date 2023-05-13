@@ -6,6 +6,7 @@ import Cart from './components/Cart/Cart';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import Checkout from './components/Checkout/Checkout';
+import { ProductProvider } from './context/ProductContext';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <div className="app-background" />
       <BrowserRouter>
         <CartProvider>
+          <ProductProvider>
           <NavBar/>
           <Routes>
             <Route path='/' element= {<ItemListContainer />} />
@@ -22,6 +24,7 @@ function App() {
             <Route path='/checkout' element= {<Checkout/>} />     
             <Route path='*' element={<h1>404 NOT FOUND</h1>} />
           </Routes>
+          </ProductProvider>
         </CartProvider>
       </BrowserRouter>
     </div>
