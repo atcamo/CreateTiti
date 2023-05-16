@@ -1,6 +1,6 @@
 import styles from './ItemDetailContainer.module.css'
 import { useState, useEffect } from 'react'
-import { getProductById } from '../../services/asyncMock'
+import { getProductById } from '../../services/firebase/getProduct'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
 
@@ -11,15 +11,13 @@ const ItemDetailContainer = () => {
 
     const { itemId } = useParams()
 
-    useEffect (() => {
-        getProductById(itemId)
-            .then(response => {
-                setProduct(response)
-            })
-            .catch(error=> {
-                console.error(error)
-            })
-    }, [itemId])
+    useEffect(() => {
+        const getData = async () => {
+            const productDataAdapted = await getProductById(itemId);
+            setProduct(productDataAdapted);
+        };
+            getData();
+        }, [itemId]);
 
 
     return (
