@@ -12,12 +12,12 @@ function CartWidget() {
 
     return (
         <div className={styles.cart}>
-        <Link to="/cart">
-            <GitHub className={styles.svg}/>
+            <Link to="/cart">
+                <GitHub className={styles.svg}/>
+            </Link>
             {totalDistinctProducts > 0 && (
-            <span className={styles.contador}>{totalDistinctProducts}</span>
+                <span className={styles.contador}>{totalDistinctProducts}</span>
             )}
-        </Link>
         </div>
     );
 }

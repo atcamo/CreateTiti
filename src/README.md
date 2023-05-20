@@ -4,6 +4,11 @@
 
 Una web diseñada para la venta de **productos Gluten Free** al consumidor final. Cuenta con un gestor de ordenes de pedidos que se almacenan en una base de datos NoSQL. NO se utilizo librerias para css sino modulos de React.
 
+## Deploy desde Github en Netlify
+
+- [Titi Gluten Free](titi-glutenfree.netlify.app)
+titi-glutenfree.netlify.app
+
 ## Multimedia
 
 ![Video de la Web](./src/assets/Web_react.gif)
@@ -11,8 +16,8 @@ Una web diseñada para la venta de **productos Gluten Free** al consumidor final
 
 ## Librerías utilizadas
 
-- [React-router-dom](https://reactrouter.com/en/main) - Para la creación de rutas dinámicas.
-- [Firebase](https://firebase.google.com/) - Base de datos NoSQL.
+- ![React-router-dom](https://reactrouter.com/en/main) - Para la creación de rutas dinámicas.
+- ![Firebase](https://firebase.google.com/) - Base de datos NoSQL.
 
 ## Installation
 
