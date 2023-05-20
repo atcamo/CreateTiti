@@ -3,6 +3,7 @@ import { CartContext } from "../../context/CartContext";
 import CartItem from "../CartItem/CartItem";
 import styles from "./Cart.module.css";
 import { Link } from "react-router-dom";
+import emptyCartImage from "./images/empty-cart.png";
 
 const Cart = () => {
     const { cart, clearCart, totalQuantity } = useContext(CartContext);
@@ -31,6 +32,7 @@ const Cart = () => {
             <Link to="/checkout">Checkout</Link>
             </>
         ) : (<>
+            <img src={emptyCartImage} alt="Carro vacío" />  
             <h1>Carro Vacio</h1>
             </>
         )}
