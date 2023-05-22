@@ -12,10 +12,11 @@ function NavBar(props) {
             <h1 className={styles.nameWeb}>Titi gluten Free</h1>
           </Link>
           <div>
+            <NavLink to={`/`} >Productos</NavLink>
             <NavLink to={`/category/Harina`} >Harina</NavLink>
             <NavLink to={`/category/Mezcla`} >Mezcla</NavLink>
           </div>
-          <CartWidget/>
+          <CartWidget />
         </nav>
       </div>
     </>
