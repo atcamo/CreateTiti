@@ -12,7 +12,6 @@ titi-glutenfree.netlify.app
 ## Multimedia
 
 ![Video de la Web](./src/assets/Web_react.gif)
-![Base de datos](./src/assets/firebase_react.png)
 
 ## Librerías utilizadas
 

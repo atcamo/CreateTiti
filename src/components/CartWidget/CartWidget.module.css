@@ -2,29 +2,61 @@
   display: flex;
   padding: 5vh;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .contador {
+  color: #ffffff;
   padding: 1vh;
-  font-size: 4vh;
+  font-size: 3vh;
+  border-radius: 50px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  backdrop-filter: blur(5px) opacity(10%);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 svg {
-  width: 200%;
-  height: 200%;
+  width: 80%;
+  height: 80%;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 767px) {
   svg {
-      width: 50%;
-      height: 50%;
+    width: 50%;
+    height: 50%;
+  }
+  .cart {
+    padding: 2vh;
+  }
+  
+.contador {
+  font-size: 3vh;
+}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  svg {
+    width: 50%;
+    height: 50%;
+  }
+  .contador {
+    font-size: 3vh;
+  }
+  .cart {
+    padding: 2vh;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 992px) and (max-width: 1199px) {
   svg {
-      width: 80%;
-      height: 80%;
+    width: 50%;
+    height: 50%;
+  }
+  .contador {
+    font-size: 3vh;
+  }
+  .cart {
+    padding: 2vh;
   }
 }

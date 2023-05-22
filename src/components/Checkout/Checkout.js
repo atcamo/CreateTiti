@@ -6,7 +6,7 @@ import styles from './Checkout.module.css';
 import Ticket from '../Ticket/Ticket';
 
 const Checkout = () => {
-    const { cart } = useContext(CartContext);
+    const { cart, clearCart } = useContext(CartContext);
     const [cartTotal, setCartTotal] = useState(0);
     const [email, setEmail] = useState('');
     const [confirmEmail, setConfirmEmail] = useState('');
@@ -56,8 +56,9 @@ const Checkout = () => {
             };
             console.log('Ticket generado:', ticket);
             setGeneratedTicket(ticket);
-    
-            // Resto de la lógica para devolver el ticket al comprador
+
+            clearCart();
+
         } catch (error) {
             console.error('Error al guardar el formulario en Firebase:', error);
         }
